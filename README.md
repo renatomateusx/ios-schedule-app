@@ -8,4 +8,4 @@ I didn't worried about constraints, try run on iPod Touch 7 or iPhone 8
 
 
 ![alt tag](https://github.com/renatomateusx/ios-schedule-app/blob/master/2.png)
-![alt tag](https://github.com/renatomateusx/ios-schedule-app/blob/master/3.png)
+![alt tag](https://github.com/renatomateusx/ios-schedule-app/blob/master/4.png)
