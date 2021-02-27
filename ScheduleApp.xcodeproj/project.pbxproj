@@ -15,6 +15,9 @@
 		413F130325E65CCE00E62487 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413F130125E65CCE00E62487 /* LaunchScreen.storyboard */; };
 		413F130E25E65CCE00E62487 /* ScheduleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413F130D25E65CCE00E62487 /* ScheduleAppTests.swift */; };
 		413F131925E65CCE00E62487 /* ScheduleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413F131825E65CCE00E62487 /* ScheduleAppUITests.swift */; };
+		41B9ABCB25E6970C00F70E6E /* ViewCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B9ABC925E6970C00F70E6E /* ViewCardController.swift */; };
+		41B9ABCC25E6970C00F70E6E /* ViewCardController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41B9ABCA25E6970C00F70E6E /* ViewCardController.xib */; };
+		41B9ABD425E698DA00F70E6E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B9ABD325E698DA00F70E6E /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		413F131425E65CCE00E62487 /* ScheduleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScheduleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		413F131825E65CCE00E62487 /* ScheduleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAppUITests.swift; sourceTree = "<group>"; };
 		413F131A25E65CCE00E62487 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41B9ABC925E6970C00F70E6E /* ViewCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCardController.swift; sourceTree = "<group>"; };
+		41B9ABCA25E6970C00F70E6E /* ViewCardController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewCardController.xib; sourceTree = "<group>"; };
+		41B9ABD325E698DA00F70E6E /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 		413F12F525E65CCB00E62487 /* ScheduleApp */ = {
 			isa = PBXGroup;
 			children = (
+				41B9ABC825E696F200F70E6E /* ViewCard */,
 				413F12F625E65CCB00E62487 /* AppDelegate.swift */,
 				413F12F825E65CCB00E62487 /* SceneDelegate.swift */,
 				413F12FA25E65CCB00E62487 /* ViewController.swift */,
@@ -106,6 +113,7 @@
 				413F12FF25E65CCE00E62487 /* Assets.xcassets */,
 				413F130125E65CCE00E62487 /* LaunchScreen.storyboard */,
 				413F130425E65CCE00E62487 /* Info.plist */,
+				41B9ABD325E698DA00F70E6E /* Service.swift */,
 			);
 			path = ScheduleApp;
 			sourceTree = "<group>";
@@ -126,6 +134,15 @@
 				413F131A25E65CCE00E62487 /* Info.plist */,
 			);
 			path = ScheduleAppUITests;
+			sourceTree = "<group>";
+		};
+		41B9ABC825E696F200F70E6E /* ViewCard */ = {
+			isa = PBXGroup;
+			children = (
+				41B9ABC925E6970C00F70E6E /* ViewCardController.swift */,
+				41B9ABCA25E6970C00F70E6E /* ViewCardController.xib */,
+			);
+			path = ViewCard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41B9ABCC25E6970C00F70E6E /* ViewCardController.xib in Resources */,
 				413F130325E65CCE00E62487 /* LaunchScreen.storyboard in Resources */,
 				413F130025E65CCE00E62487 /* Assets.xcassets in Resources */,
 				413F12FE25E65CCB00E62487 /* Main.storyboard in Resources */,
@@ -258,7 +276,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41B9ABCB25E6970C00F70E6E /* ViewCardController.swift in Sources */,
 				413F12FB25E65CCB00E62487 /* ViewController.swift in Sources */,
+				41B9ABD425E698DA00F70E6E /* Service.swift in Sources */,
 				413F12F725E65CCB00E62487 /* AppDelegate.swift in Sources */,
 				413F12F925E65CCB00E62487 /* SceneDelegate.swift in Sources */,
 			);
