@@ -69,13 +69,8 @@ class ViewController: UIViewController {
     
     }
     
-    func addAnnotationUser(location: CLLocationCoordinate2D){
-        let annotation = CustomAnnotation()
-        annotation.coordinate = location
-        annotation.title = "User Location"
-        annotation.subtitle = "Location User"
-        annotation.service = nil
-        mapView.addAnnotation(annotation)
+    func addAnnotationUser(){
+        mapView.showsUserLocation = true
     }
     
     
@@ -101,10 +96,8 @@ class ViewController: UIViewController {
     @IBAction func hideCard(_ sender: UIButton) {
         UIView.animate(withDuration: 1)
         {
-            
             self.viewServiceDetail.frame = CGRect(x: self.viewServiceDetail.frame.minX, y: self.view.frame.maxY, width: self.viewServiceDetail.frame.width, height:  self.viewServiceDetail.frame.height)
         }
-        //self.viewServiceDetail.isHidden = true
     }
   
     
@@ -120,7 +113,7 @@ extension ViewController: CLLocationManagerDelegate {
         if currentCoordinate == nil {
             zoomToLatestLocation(with: latestLocation.coordinate)
             addAnnotationService()
-            addAnnotationUser(location: latestLocation.coordinate)
+            addAnnotationUser()
         }
         currentCoordinate = latestLocation.coordinate
     }
@@ -133,11 +126,12 @@ extension ViewController: CLLocationManagerDelegate {
 
 extension ViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
         if annotation.isEqual(mapView.userLocation) {
             let userIdentifier = "UserLocation"
-            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "UserLocation")
+            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: userIdentifier)
             if annotationView == nil {
-                annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "UserLocation")
+                annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: userIdentifier)
             }
             annotationView?.image = imageReturn(imageString: "user_location")
             return annotationView
@@ -181,30 +175,3 @@ class CustomAnnotation: MKPointAnnotation{
     var service:Service!
 }
     
-//
-//    if annotationView == nil {
-//        annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-//        annotationView?.canShowCallout = false
-//        let image = UIImage(named: "img5")
-//        let resized = CGSize(width: 60, height: 60)
-//        UIGraphicsBeginImageContext(resized)
-//        image?.draw(in: CGRect(origin: .zero, size: resized))
-//        let resizedimage = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-//        annotationView?.image = resizedimage
-//        annotationView?.frame.size.height = 50
-//        annotationView?.frame.size.width = 50
-//
-//        let button = CustomButton(type: .detailDisclosure)
-//        button.service = Service()
-//        button.service.coordinate = annotation.coordinate
-//        button.service.nameService = annotation.title as! String
-//
-////            button.addTarget(self, action: #selector(openCard), for: .touchUpInside)
-////            annotationView?.detailCalloutAccessoryView = button
-//    } else {
-//        annotationView?.annotation = annotation
-//    }
-
-    
-
