@@ -87,7 +87,7 @@ class ViewController: UIViewController {
         viewServiceDetail.isHidden = false
         UIView.animate(withDuration: 1)
         {
-            self.viewServiceDetail.frame = CGRect(x: self.viewServiceDetail.frame.minX, y: self.view.frame.maxY - 220.0, width: self.viewServiceDetail.frame.width, height:  self.viewServiceDetail.frame.height)
+            self.viewServiceDetail.frame = CGRect(x: self.viewServiceDetail.frame.origin.x, y: self.viewServiceDetail.frame.origin.y - 220.0, width: self.viewServiceDetail.frame.width, height:  self.viewServiceDetail.frame.height)
         }
     }
 
@@ -96,7 +96,7 @@ class ViewController: UIViewController {
     @IBAction func hideCard(_ sender: UIButton) {
         UIView.animate(withDuration: 1)
         {
-            self.viewServiceDetail.frame = CGRect(x: self.viewServiceDetail.frame.minX, y: self.view.frame.maxY, width: self.viewServiceDetail.frame.width, height:  self.viewServiceDetail.frame.height)
+            self.viewServiceDetail.frame = CGRect(x: self.viewServiceDetail.frame.origin.x, y: self.viewServiceDetail.frame.origin.y + 220.0, width: self.viewServiceDetail.frame.width, height:  self.viewServiceDetail.frame.height)
         }
     }
   
@@ -156,7 +156,7 @@ extension ViewController: MKMapViewDelegate {
             let service = view.annotation as! CustomAnnotation
             print(service.service.debugDescription)
             openCard(service: service.service)
-        }        
+        }
     }
     
     func imageReturn(imageString:String) -> UIImage{
