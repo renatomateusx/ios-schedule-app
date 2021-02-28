@@ -87,7 +87,7 @@ class ViewController: UIViewController {
         viewServiceDetail.isHidden = false
         UIView.animate(withDuration: 1)
         {
-            self.viewServiceDetail.frame = CGRect(x: self.viewServiceDetail.frame.minX, y: self.view.frame.midY + 50, width: self.viewServiceDetail.frame.width, height:  self.viewServiceDetail.frame.height)
+            self.viewServiceDetail.frame = CGRect(x: self.viewServiceDetail.frame.minX, y: self.view.frame.maxY - 220.0, width: self.viewServiceDetail.frame.width, height:  self.viewServiceDetail.frame.height)
         }
     }
 
@@ -151,11 +151,12 @@ extension ViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        print("Annotation Called")
-        let service = view.annotation as! CustomAnnotation
-        print(service.service.debugDescription)
-        openCard(service: service.service)
-        
+        if(view.annotation !== mapView.userLocation){
+            print("Annotation Called")
+            let service = view.annotation as! CustomAnnotation
+            print(service.service.debugDescription)
+            openCard(service: service.service)
+        }        
     }
     
     func imageReturn(imageString:String) -> UIImage{
